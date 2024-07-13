@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daytime</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+
+        body{
+            background-color: rgb(227, 227, 206);
+            text-align: center;
+            font-family: Darker Grotesque, sans-serif;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 35pt;
+            font-weight: 700;
+            text-shadow: 5px 5px 1px black;
+        }
+
+        h2{
+            color: rgb(44, 43, 43);
+            text-align: center;
+            font-size: 30pt;
+            padding-top: 40px;
+            font-weight: 600;
+            
+        }
+
+        main{
+            background-color: white;
+            border-radius: 5px;
+            height: 400px;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+            box-shadow: 15px 15px 1px rgb(50, 50, 50);
+        }
+
+        img{
+            margin: auto;
+            border-radius: 500px;
+            display: none;
+            
+        }
+
+        p{
+            font-weight: 600;
+            text-align: center;
+            font-size: 23pt;
+            color: rgb(44, 43, 43);
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="h1">Day time</h1>
+    <main>
+        <h2>Now its <span id="span">XPTO</span>h</h2>
+        <img src="resized-pics/dia-resized.png" alt="Bom dia!" id="dia">
+        <img src="resized-pics/tarde-resized.jpg" alt="Boa tarde!" id="tarde">
+        <img src="resized-pics/noite-resized.png" alt="Boa noite!" id="noite">
+        <p>Good Morning!</p>
+    </main>
+    <script>
+
+        const now = new Date();
+        const hour = now.getHours();
+        const dia = document.getElementById('dia');
+        const tarde = document.getElementById('tarde');
+        const noite = document.getElementById('noite');
+        const p = document.querySelector('p');
+        const body = document.querySelector('body');
+        const h1 = document.getElementById('h1');
+        const span = document.getElementById('span');
+        span.textContent = hour;
+
+        if(hour >= 6 && hour < 12){
+            dia.style.display = 'block';
+            p.textContent = 'Good Morning!';
+            body.style.backgroundColor = '#DBBD90';
+            h1.style.color = 'rgb(44, 43, 43)';
+        } else if(hour >= 12 && hour < 18){
+            tarde.style.display = 'block';
+            p.textContent = 'Good Afternoon!';
+            body.style.backgroundColor = 'rgb(255, 247, 236)';
+            h1.style.color = 'rgb(44, 43, 43)';
+        } else {
+            noite.style.display = 'block';
+            p.textContent = 'Good Evening!';
+            body.style.backgroundColor = '#30436B';
+        }
+
+    </script>
+</body>
+</html>
