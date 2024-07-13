@@ -18,7 +18,7 @@ if(hour >= 6 && hour < 12){
 } else if(hour >= 12 && hour < 18){
     tarde.style.display = 'block';
     p.textContent = 'Good Afternoon!';
-    body.style.backgroundColor = 'rgb(255, 247, 236)';
+    body.style.backgroundColor = '#FF8259';
     h1.style.color = 'rgb(44, 43, 43)';
 } else {
     noite.style.display = 'block';
